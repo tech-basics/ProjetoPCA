@@ -3,7 +3,9 @@
 <head>
    <meta charset='utf-8'>
    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="user.css">
    <link rel="stylesheet" type="text/css" href="global.css">
+   <link rel="stylesheet" type="text/css" href="slider.css">
    <title>PCA</title>
 </head>
 <body>
@@ -13,12 +15,39 @@
    <li class='active'><a href='index.html'>Início</a></li>
    <li><a href='indexCursos.html'>Cursos</a></li>
    <li><a href='indexProjetos.html'>Projetos</a></li>
+   <li>
+      <div class="username">
+      <div id="user" class="user"></div> 
+      <img id="UserImg" src="">
+      </div>
+   </li>
    </ul>
 </div>
+
+
+<div class="slider" data-pos="0">
+		<div class="slider__slides">
+			<section id="home" class="slider__slide">
+				<h1>Tech Basics</h1>
+				<p>Onde Devs iniciantes se desenvolvem !!!</p>
+				<img style="height: 550px; position: fixed; left: 500px; top: 0;" src="img/CodePc.png">
+			</section>
+			<section class="slider__slide">
+				<img style="height: 550px; position: fixed; left: 1800px; top: 0;" src="img/vetorA.png">
+			</section>
+			<section class="slider__slide">
+				<img style="height: 550px; position: fixed; left: 2800px; top: 0;" src="img/vetorB.png">
+			</section>
+		</div>
+		<div class="slider__dots">
+			<a href="#" class="slider__indicator"></a>
+			<a href="#" class="slider__dot" data-pos="0"></a>
+			<a href="#" class="slider__dot" data-pos="1"></a>
+			<a href="#" class="slider__dot" data-pos="2"></a>
+		</div>
 </div>
 
-
-
-
+<script type="text/javascript" src="user.js"></script>
+<script type="text/javascript" src="slider.js"></script>
 </body>
 <html>

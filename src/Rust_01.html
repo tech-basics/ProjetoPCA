@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang='pt-br'>
+<head>
+   <meta charset='utf-8'>
+   <link rel="stylesheet" href="stylesCursos.css">
+   <link rel="stylesheet" type="text/css" href="global.css">
+      <link rel="stylesheet" href="user.css">
+   <link rel="stylesheet" type="text/css" href="prism/prism.css" data-noprefix />
+   <title>PCA</title>
+</head>
+<body>
+<!--menu-->
+<div id='menu'>
+<ul>
+   <li><a href='index.html'>Início</a></li>
+   <li class='active'><a href='indexCursos.html'>Cursos</a></li>
+   <li><a href='indexProjetos.html'>Projetos</a></li>
+   <li>
+      <div class="username">
+      <div id="user" class="user"></div> 
+      <img id="UserImg" src="">
+      </div>
+   </li>
+</ul>
+</div>
+</div>
+
+<div class="sidebar">
+  <h1>Rust</h1>
+    <a href='#'>Hello World</a>
+    <a href='Rust_02.html'>Variáveis</a>
+    <a>TopicoC</a>
+    <a>TopicoD</a>
+  </div>
+
+  <div class="setor">
+  <nav>
+      <ul>
+        <li><a href="#sec1" class="tab">Instalando o Rust</a></li>
+        <li><a href="#sec2" class="tab">Hello World</a></li>
+        <li><a href="#sec3" class="tab">Section 3</a></li>
+       </ul>
+      <div class="barra"></div>
+    </nav>
+   </div>
+  <main class="main">
+    <section id="sec1" class="sec">
+      <h1><span>Instalando o Rust:</span></h1>
+      <p>
+        Para instalar o rust é preciso acessar o site oficial na parte designada à instalação: <br> (https://www.rust-lang.org/pt-BR/tools/install) <br><br>O método principal utilizado para instalar o rust é com um instalador chamado Rustup. No windows, selecione a versão correspondente ao seu sistema x32 ou x64 bits. Após o download basta instalar que o rust estará pronto para ser utilizado em sua máquina.
+      </p>
+
+      <p>
+        Se você estiver utilizando uma distribuição linux será necessário utilizar a biblioteca curl para a instalação do rust, você pode utilizar o seguinte comando para isso: <br><br>
+
+ 
+        “sudo apt-get install curl –y” 
+        <br><br>
+
+        Se você estiver utilizando a distro RedHat utilize:  
+<br><br>
+        “sudo dnf install curl –y” 
+<br><br>
+        Agora basta utilizar os próximos comandos para instalar o rust 
+<br>
+        Para uma distribuição linux utilize no terminal:  
+<br><br>
+        “curl https://sh.rustup.rs -sSf | sh” 
+ <br><br>
+        Caso esteja utilizando o WSL [Windows Subsystem for Linux] utilize o seguinte comando no terminal: 
+        <br>“curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh”
+      </p>
+
+      <img class="imgCursos" src="Rust_src/inst.png">
+
+      <p>Se você já instalou Rustup no passado, você pode atualizar para uma nova versão executando o comando [rustup update] no terminal do windows, ou pelo powershell. </p>
+        
+    </section>
+
+    <section id="sec2" class="sec">
+      <h1><span>Criando um projeto – Hello World </span></h1>
+      <p>Crie um novo diretório com nome de sua preferência. Agora nesta pasta crie um arquivo com a extensão [.rs] e abra no editor de sua preferência. 
+
+      Para este exemplo estaremos usando [/Rust] como diretório e [main.rs] para o arquivo principal. 
+
+      Agora neste arquivo escreva o código a seguir e salve:</p>
+      
+
+    <pre>
+        <code class="language-rust">
+        fn main() { 
+
+        println!("Olá Mundo!"); 
+
+        } 
+        </code>
+    </pre>
+
+    <h2>Nota de Sintaxe:</h2> 
+    <p>
+    fn – Indica uma função ou ponteiro de função. 
+
+    println! – printa na tela uma mensagem e segue para a próxima linha 
+
+    print! - equivalente ao println! Exceto que não printa uma nova linha no final da mensagem 
+
+    Após salvar o arquivo acesse o diretório pelo terminal ou powershell, basta compilar o programa e executar, use: 
+
+    rustc main.rs 
+
+    ./main  
+
+    Como resultado para o código você verá na saída do terminal ‘Olá mundo!’ 
+    </p>
+
+
+    </section>
+        <section id="sec3" class="sec">
+      <h1><span>Section 3</span></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam neque adipisci vitae facere doloribus culpa a, nulla? Impedit, cumque accusamus modi voluptatem aliquid, provident labore quis natus tempora minus neque.</p>
+      <p>Placeat corporis doloremque repellat praesentium quidem voluptatibus voluptate incidunt, vitae libero cum possimus voluptas rerum ut porro nulla quos mollitia delectus eum illo ratione accusantium natus quibusdam. Voluptatibus nostrum, magni modi, asperiores itaque obcaecati mollitia incidunt error architecto? Ut ex dolorum, optio tenetur adipisci repudiandae quae inventore similique voluptates sunt tempora aspernatur asperiores impedit nisi cupiditate voluptatem sint animi aliquam soluta illo deserunt voluptate dignissimos velit delectus enim. Enim, commodi amet dolore libero illo dignissimos error quibusdam optio neque eos sit culpa harum iste deserunt hic, ducimus natus impedit eius reprehenderit necessitatibus omnis! Repudiandae ex nemo quibusdam asperiores error architecto aut, veniam temporibus quisquam molestias, voluptatibus eligendi itaque ipsa dicta inventore, ducimus impedit.</p>
+      <p>Praesentium in harum, laboriosam dolorum quam cumque, dolor earum fugiat. Recusandae, illum corporis saepe voluptatem molestiae a similique. Voluptas provident pariatur ipsa quam laboriosam nesciunt voluptatem saepe tenetur molestias, animi adipisci repellendus rerum beatae expedita quis officiis dignissimos veniam, debitis quae, asperiores sint perferendis magnam corrupti vel. Placeat nesciunt, reiciendis totam similique voluptas, nemo corrupti earum molestiae alias id sint doloribus quisquam asperiores. Obcaecati enim atque pariatur accusamus fuga, blanditiis neque, quod deserunt nostrum. Reprehenderit repudiandae earum atque.</p>
+      <p>Blanditiis debitis aut ipsum vitae ratione ut, nihil veritatis quas enim, dolores eaque omnis officia perspiciatis error id fugiat atque sapiente non tempore quae quam, quibusdam! Ratione accusantium fugiat illum neque inventore beatae totam, cum odit ab provident dicta accusamus, soluta eligendi quam explicabo maiores aspernatur blanditiis, laboriosam ut praesentium repudiandae ex vero? Molestias in nostrum, nesciunt quidem corrupti! Cupiditate architecto, hic sit sapiente maxime adipisci impedit optio suscipit harum, earum totam assumenda nihil odit perspiciatis nemo dignissimos pariatur dolor reprehenderit dolore, tenetur fugit?</p>
+      
+    </section>
+
+  </main>
+  </div>
+  <script src="prism/prism.js"></script>
+  <script type="text/javascript" src="user.js"></script>
+</body>
+<html>

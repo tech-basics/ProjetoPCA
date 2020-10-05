@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="global.css">
+  <link rel="stylesheet" type="text/css" href="user.css">
+  <style type="text/css">
+	.loader {
+		position: fixed;
+		z-index: 99;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.loader.hidden {
+		animation: fadeOut 2s;
+		animation-fill-mode: forwards;
+	}
+	@keyframes fadeOut {
+		100% {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+	</style>
+</head>
+
+<body>
+
+<div class="loader"><img src="loading.gif"></div>
+<div class="containerLoad">
+	<div class="cardLoad">
+		<label for="myFile" class="labelImg"><img style="width: 20px;" src="change.png"></label>
+		<input class="inputImg" type="file" id="myFile">
+	    <img id="imgPreview" src="" alt="Preview">
+	    <input class="InputName" id="user" type="text" placeholder="Nome">
+	    <a onclick="localS();" href="index.html" class="botaoLoad">Avançar</a>
+	</div>
+</div>
+
+<script type="text/javascript">
+	window.addEventListener("load", function (){
+		const loader = document.querySelector(".loader");
+		loader.className += " hidden";
+	})
+
+</script>
+
+<script type="text/javascript">
+
+	function localS() {
+		
+		const user = document.getElementById("user");
+
+		const username = user.value;
+
+		localStorage.setItem("username", username);	
+	}
+
+	document.querySelector("#myFile").addEventListener("change", function(){
+		const reader = new FileReader();
+
+		reader.addEventListener("load", () =>{
+			localStorage.setItem("imgR", reader.result);
+		});
+
+		reader.readAsDataURL(this.files[0]);
+		location.reload();
+	});
+
+	document.addEventListener("DOMContentLoaded", () => {
+		const ImageData = localStorage.getItem("imgR");
+
+		if (ImageData) {
+			document.querySelector("#imgPreview").setAttribute("src", ImageData);
+		}
+	});
+</script>
+</body>
+</html>
+
+

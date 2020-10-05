@@ -11,7 +11,7 @@ body{
 
 /*menu*/
 #menu,
-#menu ul,
+#menu ul, 
 #menu ul li,
 #menu ul li a {
   margin: 0;
@@ -35,10 +35,12 @@ body{
   height: 0;
 }
 #menu {
-  width: auto;
+  width: 100%;
   border-bottom: 3px solid #47c9af;
   font-family: Raleway, sans-serif;
   line-height: 1;
+  position: fixed;
+  background-color: white;
 }
 #menu ul {
   background: #ffffff;
@@ -60,6 +62,12 @@ body{
 #menu.align-right > ul > li > a {
   margin-right: 0;
   margin-left: -4px;
+}
+#menu > ul{
+	background-color: white;
+	width: 100%;
+	height: 45px;
+	margin-top: -20px;
 }
 #menu > ul > li > a {
   z-index: 2;
@@ -111,7 +119,6 @@ body{
     text-align: center;
     font-size: 40px;
     color: #6a6a6a;
-    margin-top: 100px;
     font-weight: 100;
     font-family: 'Roboto', sans-serif;
 }
@@ -147,7 +154,7 @@ a{
 .sidebar{
   position: fixed;
   width: 200px;
-  top:50px;
+  top:48px;
   left: 0;
   bottom: 0;
   background: #fff;
@@ -165,7 +172,6 @@ a{
   font-weight: 300;
   margin: 0;
   font-size: 25px;
-  text-transform: uppercase;
 }
 
 .sidebar a{
@@ -235,4 +241,10 @@ h1 {
 h1 span {
   -webkit-box-shadow: inset 0px -0.5em 0px 0px #47c9af;
 
+}
+
+.imgCursos{
+  justify-content: center;
+  width: auto;
+  height: 250px;
 }

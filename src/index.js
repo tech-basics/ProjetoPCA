@@ -14,7 +14,7 @@ const createWindow = () => {
   });
 
   // carrega o index.html do aplicativo.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.loadFile(path.join(__dirname, 'loader.html'));
   mainWindow.setMenu(null); // Remove o menu
   
 

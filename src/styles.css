@@ -1,5 +1,4 @@
 body{
-
     width: 100%;
     height: 100%;
     font-family: sans-serif;
@@ -108,7 +107,7 @@ body{
 }
 
 .title{
-    text-align: center;
+	text-align: center;
     font-size: 40px;
     color: #6a6a6a;
     margin-top: 100px;
@@ -120,19 +119,19 @@ body{
 
 /*titulo*/
 .divCursos{
- height: 200px;
- background: linear-gradient(#EEF3F7, #cedce7);
- overflow: hidden;
+	height: 200px;
+ 	background: linear-gradient(#EEF3F7, #cedce7);
+ 	overflow: hidden;
 }
 
 .divCursos #title{
  color: black;
  font-family: 'lato',sans-serif;
  font-weight: 300;
-   font-size: 50px;
-   letter-spacing: 10px;
-   padding-left: 20px;
-   margin-top: 110px;
+ font-size: 50px;
+ letter-spacing: 10px;
+ padding-left: 20px;
+ margin-top: 110px;
 } 
 
 /*separador*/
@@ -168,8 +167,8 @@ body{
 
 .container{
     width: 100%;
-    max-width: 1200px;
-    height: 430px;
+    max-width: 1300px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -217,10 +216,8 @@ body{
 }
 
 .botao {
- background:linear-gradient(to bottom, #47c9af 5%, #4fe3c5 100%);
- background-color:#47c9af;
+ background:linear-gradient(-65deg, #47c9dF 0%, #47c9af 100%);
  border-radius:22px;
- border:1px solid #cccccc;
  display:inline-block;
  cursor:pointer;
  color:#ffffff;
@@ -229,12 +226,9 @@ body{
  font-weight:bold;
  font-style:italic;
  padding:10px 48px;
- {text-decoration: none;
+ text-decoration: none;
 }
-.botao:hover {
- background:linear-gradient(to bottom, #47c9af 5%, #4fe3c5 100%);
- background-color:#4fe3c5;
-}
+.botao:hover {background:linear-gradient(to bottom, #47c9af 5%, #4fe3c5 100%);}
 .botao:active {
  position:relative;
  top:1px;
