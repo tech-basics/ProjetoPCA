@@ -18,7 +18,6 @@
    <li>
       <div class="username">
       <div id="user" class="user"></div> 
-      <img id="UserImg" src="">
       </div>
    </li>
 </ul>
@@ -38,7 +37,7 @@
       <ul>
         <li><a href="#sec1" class="tab">Instalando o Rust</a></li>
         <li><a href="#sec2" class="tab">Hello World</a></li>
-        <li><a href="#sec3" class="tab">Section 3</a></li>
+        <li><a href="#sec3" class="tab">Utilizando Cargo</a></li>
        </ul>
       <div class="barra"></div>
     </nav>
@@ -51,24 +50,24 @@
       </p>
 
       <p>
-        Se você estiver utilizando uma distribuição linux será necessário utilizar a biblioteca curl para a instalação do rust, você pode utilizar o seguinte comando para isso: <br><br>
+        Se você estiver utilizando uma distribuição linux será necessário utilizar a biblioteca curl para a instalação do rust, você pode utilizar o seguinte comando para isso: <br>
 
  
-        “sudo apt-get install curl –y” 
+        <span style="color: #47c9af;"> “sudo apt-get install curl –y” </span>
         <br><br>
 
         Se você estiver utilizando a distro RedHat utilize:  
-<br><br>
-        “sudo dnf install curl –y” 
+<br>
+        <span style="color: #47c9af;">“sudo dnf install curl –y” </span>
 <br><br>
         Agora basta utilizar os próximos comandos para instalar o rust 
 <br>
         Para uma distribuição linux utilize no terminal:  
-<br><br>
-        “curl https://sh.rustup.rs -sSf | sh” 
+<br>
+        <span style="color: #47c9af;">“curl https://sh.rustup.rs -sSf | sh” </span>
  <br><br>
         Caso esteja utilizando o WSL [Windows Subsystem for Linux] utilize o seguinte comando no terminal: 
-        <br>“curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh”
+        <br><span style="color: #47c9af;">“curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh”</span>
       </p>
 
       <img class="imgCursos" src="Rust_src/inst.png">
@@ -79,36 +78,34 @@
 
     <section id="sec2" class="sec">
       <h1><span>Criando um projeto – Hello World </span></h1>
-      <p>Crie um novo diretório com nome de sua preferência. Agora nesta pasta crie um arquivo com a extensão [.rs] e abra no editor de sua preferência. 
+      <p>Crie um novo diretório com nome de sua preferência. Agora nesta pasta crie um arquivo com a extensão [.rs] e abra no editor de sua preferência. <br>
 
-      Para este exemplo estaremos usando [/Rust] como diretório e [main.rs] para o arquivo principal. 
+      Para este exemplo estaremos usando [/Rust] como diretório e [main.rs] para o arquivo principal. <br>
 
       Agora neste arquivo escreva o código a seguir e salve:</p>
       
 
     <pre>
         <code class="language-rust">
-        fn main() { 
+    fn main() { 
 
-        println!("Olá Mundo!"); 
-
-        } 
-        </code>
+    println!("Olá Mundo!"); 
+    } 
+    </code>
     </pre>
 
     <h2>Nota de Sintaxe:</h2> 
-    <p>
-    fn – Indica uma função ou ponteiro de função. 
+    <ul>
+    	<li>fn – Indica uma função ou ponteiro de função</li>
+    	<li>println! – printa na tela uma mensagem e segue para a próxima linha</li>
+    	<li>print! - equivalente ao println! Exceto que não printa uma nova linha no final da mensagem</li>
+    </ul>
 
-    println! – printa na tela uma mensagem e segue para a próxima linha 
+    Após salvar o arquivo acesse o diretório pelo terminal ou powershell, basta compilar o programa e executar, utilizando: <br><br>
 
-    print! - equivalente ao println! Exceto que não printa uma nova linha no final da mensagem 
+    <span style="color: #47c9af;">rustc main.rs</span> <br>
 
-    Após salvar o arquivo acesse o diretório pelo terminal ou powershell, basta compilar o programa e executar, use: 
-
-    rustc main.rs 
-
-    ./main  
+    <span style="color: #47c9af;">./main  </span><br><br>
 
     Como resultado para o código você verá na saída do terminal ‘Olá mundo!’ 
     </p>
@@ -116,11 +113,52 @@
 
     </section>
         <section id="sec3" class="sec">
-      <h1><span>Section 3</span></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam neque adipisci vitae facere doloribus culpa a, nulla? Impedit, cumque accusamus modi voluptatem aliquid, provident labore quis natus tempora minus neque.</p>
-      <p>Placeat corporis doloremque repellat praesentium quidem voluptatibus voluptate incidunt, vitae libero cum possimus voluptas rerum ut porro nulla quos mollitia delectus eum illo ratione accusantium natus quibusdam. Voluptatibus nostrum, magni modi, asperiores itaque obcaecati mollitia incidunt error architecto? Ut ex dolorum, optio tenetur adipisci repudiandae quae inventore similique voluptates sunt tempora aspernatur asperiores impedit nisi cupiditate voluptatem sint animi aliquam soluta illo deserunt voluptate dignissimos velit delectus enim. Enim, commodi amet dolore libero illo dignissimos error quibusdam optio neque eos sit culpa harum iste deserunt hic, ducimus natus impedit eius reprehenderit necessitatibus omnis! Repudiandae ex nemo quibusdam asperiores error architecto aut, veniam temporibus quisquam molestias, voluptatibus eligendi itaque ipsa dicta inventore, ducimus impedit.</p>
-      <p>Praesentium in harum, laboriosam dolorum quam cumque, dolor earum fugiat. Recusandae, illum corporis saepe voluptatem molestiae a similique. Voluptas provident pariatur ipsa quam laboriosam nesciunt voluptatem saepe tenetur molestias, animi adipisci repellendus rerum beatae expedita quis officiis dignissimos veniam, debitis quae, asperiores sint perferendis magnam corrupti vel. Placeat nesciunt, reiciendis totam similique voluptas, nemo corrupti earum molestiae alias id sint doloribus quisquam asperiores. Obcaecati enim atque pariatur accusamus fuga, blanditiis neque, quod deserunt nostrum. Reprehenderit repudiandae earum atque.</p>
-      <p>Blanditiis debitis aut ipsum vitae ratione ut, nihil veritatis quas enim, dolores eaque omnis officia perspiciatis error id fugiat atque sapiente non tempore quae quam, quibusdam! Ratione accusantium fugiat illum neque inventore beatae totam, cum odit ab provident dicta accusamus, soluta eligendi quam explicabo maiores aspernatur blanditiis, laboriosam ut praesentium repudiandae ex vero? Molestias in nostrum, nesciunt quidem corrupti! Cupiditate architecto, hic sit sapiente maxime adipisci impedit optio suscipit harum, earum totam assumenda nihil odit perspiciatis nemo dignissimos pariatur dolor reprehenderit dolore, tenetur fugit?</p>
+      <h1><span>Utilizando Cargo</span></h1>
+
+      <blockquote style="margin-top: 30px;">
+      Cargo é uma ferramenta que permite pacotes Rust declararem suas várias dependências, para isso ele introduz dois arquivos de metadados com vários bits de informações do pacote, Busca e constrói as dependências do seu pacote e chama o rustc para construir seu pacote de forma otimizada.</blockquote>
+
+
+      <p>Para iniciar um novo projeto utilizando cargo utilize o comando <span style="color: #47c9af;">[cargo new]</span> + "nome do projeto" no terminal do windows ou pelo powershell, como no exemplo:<br><br>
+
+      <span style="color: #47c9af;">cargo new  projeto </span><br><br>
+
+	  Como resultado teremos o diretório projeto com os seguintes itens: 
+
+      </p>
+      <pre>
+. projeto 
+
+├── Cargo.toml  
+
+└── src  
+
+     └── main.rs 
+      </pre>
+
+
+      <p>Primeiro vamos analisar cargo.toml, este é um arquivo chamado de <span style="color: #47c9af;">[manifesto]</span> e contém todo metadado que o cargo precisa para compilar o seu pacote. </p>
+
+
+
+    <pre>
+        <code class="language-toml">
+    [package]  
+
+	name = "projeto"  
+
+	version = "0.1.0"  
+
+	authors = ["Your Name <you@example.com>"]  
+
+	edition = "2020"  
+
+	[dependencies] 
+
+	</code>
+</pre>
+
+ 
       
     </section>
 

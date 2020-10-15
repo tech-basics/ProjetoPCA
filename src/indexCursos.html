@@ -31,19 +31,29 @@
   <h2 id="title">Cursos</h2>
  </div> 
 
+<!-- Search-->
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..." title="Type in a name">
+
 <!--Separador Linguagens-->
 
 <div><h3 class="separador"><span>Linguagens de Programação </span></h3></div> 
 
 
+
  <!--cards-->
 
-<div class="container">
+<div class="container" id="myContainer">
        
         <div class="card">
             <img src="img/Python.png">
             <h4>Python</h4>
-            <a href="CursoTeste.html" class="botao">Avançar</a>
+            <a href="#" class="botao">Avançar</a>
+        </div>
+
+        <div class="card">
+            <img src="img/rust.png">
+            <h4>Rust</h4>
+            <a href="Rust_01.html" class="botao">Avançar</a>
         </div>
         
         <div class="card">
@@ -83,12 +93,6 @@
         </div>
 
         <div class="card">
-            <img src="img/rust.png">
-            <h4>Rust</h4>
-            <a href="Rust_01.html" class="botao">Avançar</a>
-        </div>
-
-        <div class="card">
             <img src="img/PHP.png">
             <h4>PHP</h4>
             <a href="#" class="botao">Avançar</a>
@@ -116,5 +120,6 @@
 
     </div>
 <script type="text/javascript" src="user.js"></script>
+<script type="text/javascript" src="sBox.js"></script>
 </body>
 <html>

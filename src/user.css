@@ -28,6 +28,7 @@
 .containerLoad .cardLoad #imgPreview{
 	margin-top: 30px;
   width: 200px; border-radius: 50%; border: 2px solid #47c9af;
+  max-width: 250px;
 }
 
 .containerLoad .cardLoad a {
@@ -63,7 +64,7 @@
   text-align: center;
   border-radius: 6px;
   padding: 15px 10px;
-  left: 78%;
+  margin-left: 725px;
   top: 55px;
   position: fixed;
   z-index: 1;
@@ -72,8 +73,8 @@
 .username:hover #UserImg { visibility: visible; }
 
 .user {
-  position: fixed;
-  left: 80%;
+  position: absolute;
+  margin-left: 725px;
   top: 5px;
   padding: 10px 20px 10px 20px;
   font-size: 15px;

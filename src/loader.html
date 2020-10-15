@@ -51,6 +51,12 @@
 </script>
 
 <script type="text/javascript">
+	if (localStorage.getItem("imgR") === null){
+		document.querySelector("#imgPreview").setAttribute("src", "img/placeholder.png");
+	}
+</script>
+
+<script type="text/javascript">
 
 	function localS() {
 		

@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+//const {autoUpdater} = require("electron-updater");
 const path = require('path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -9,8 +10,8 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 const createWindow = () => {
   // Cria uma janela.
   const mainWindow = new BrowserWindow({
-    width: 1140,
-    height: 658,
+    width: 1180,
+    height: 662,
   });
 
   // carrega o index.html do aplicativo.
@@ -46,5 +47,20 @@ app.on('activate', () => {
   }
 });
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
+
+
+
+// when the update is ready, notify the BrowserWindow
+/*
+autoUpdater.on('update-downloaded', (info) => {
+    win.webContents.send('updateReady')
+});
+app.on('ready', function() {
+  createDefaultWindow();
+  autoUpdater.checkForUpdates();
+});
+ipcMain.on("quitAndInstall", (event, arg) => {
+    autoUpdater.quitAndInstall();
+})
+
+*/
