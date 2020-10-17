@@ -24,24 +24,28 @@
 </div>
 </div>
 
+
+<!--Barra lateral-->
 <div class="sidebar">
   <h1>Rust</h1>
     <a href='#'>Hello World</a>
     <a href='Rust_02.html'>Variáveis</a>
-    <a>TopicoC</a>
-    <a>TopicoD</a>
   </div>
 
+<!--Guia da página-->
   <div class="setor">
   <nav>
       <ul>
         <li><a href="#sec1" class="tab">Instalando o Rust</a></li>
         <li><a href="#sec2" class="tab">Hello World</a></li>
         <li><a href="#sec3" class="tab">Utilizando Cargo</a></li>
+        <li><a href="#sec4" class="tab">Comentários</a></li>
        </ul>
       <div class="barra"></div>
     </nav>
    </div>
+
+   <!--artigo-->
   <main class="main">
     <section id="sec1" class="sec">
       <h1><span>Instalando o Rust:</span></h1>
@@ -158,9 +162,66 @@
 	</code>
 </pre>
 
+	<p>Seguindo para o próximo arquivo main.rs que está dentro da pasta src: </p>
+
+	<pre>
+        <code class="language-rust">
+	fn main() {  
+
+	println!("Hello, world!");  
+
+	}  
+	</code>
+	</pre>
+
+	<p>
+	Como podemos observar, a função <span style="color: #47c9af;">[cargo new]</span> gera por padrão um arquivo main.rs com a função ‘Hello, world!’ inclusa. Para compilar este cógido gerado com cargo basta acessar o diretório que foi criado pelo terminal e utilizar o comando <span style="color: #47c9af;">[cargo build]</span> e para executar basta utilizar <span style="color: #47c9af;">[cargo run]</span> o resultado será o "Hello world" no output do terminal assim como descrito na função.<br><br>
+
+	Nesta sequência podemos verificar que foram criadas novas pastas com o arquivo compilado, o caminho gerado foi: <span style="color: #47c9af;">[./target/debug/]</span>. <br>
+
+	Olhando os arquivos verificamos que o nome do executável gerado será idêntico ao <span style="color: #47c9af;">[name]</span> indicado em cargo.toml<br> 
+
+	Quando estiver pronto para lançar uma aplicação você pode usar <span style="color: #47c9af;">[cargo build --release]</span> para compilar seus arquivos.<br> <br>
+
+	Com <span style="color: #47c9af;">[cargo build]</span> e <span style="color: #47c9af;">[cargo run]</span> o aplicativo gerado foi compilado em modo de depuração [o padrão para desenvolvimento]. Neste modo o tempo de compilação é menor porque o compilador não faz otimizações, mas o código será executado mais lentamente. <br>
+	 
+
+	Já utilizando <span style="color: #47c9af;">[Cargo build -–release]</span> as otimizações estão ativadas, neste modo de lançamento o programa leva mais tempo para compilar, mas o código será executado mais rápido. <br><br>
+
+	 
+
+	Nota: <span style="color: #47c9af;">[cargo build –release]</span> coloca o binário resultante em [target/release] no lugar de [target/debug]. 
+	</p>
  
-      
     </section>
+
+  	<section id="sec4" class="sec">
+		<h1><span>Comentários</span></h1>
+
+		<p>
+		Qualquer linguagem precisa de comentários e em rust não é diferente. <br>
+		Comentários são notas que podem ser incluídas no código fonte para descrever funções, nos ajudar a localizar partes importantes no código e muito mais.<br><br> Note que comentários não modificam o programa executado e servem somente para ajudar o programador a melhor organizar seu projeto. 
+
+		</p>
+
+	<pre>
+        <code class="language-rust">
+
+	// comentário em linha. 
+
+	// O comentário se estende até o final desta linha. 
+
+	/* 
+
+	Bloco de comentários 
+
+	Permite comentar em todas as linhas dentro da marcação 
+
+	*/ 
+</code>
+</pre>
+
+  	</section>
 
   </main>
   </div>

@@ -10,12 +10,12 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 const createWindow = () => {
   // Cria uma janela.
   const mainWindow = new BrowserWindow({
-    width: 1180,
+    width: 1200,
     height: 662,
   });
 
   // carrega o index.html do aplicativo.
-  mainWindow.loadFile(path.join(__dirname, 'loader.html'));
+  mainWindow.loadFile(path.join(__dirname, 'init.html'));
   mainWindow.setMenu(null); // Remove o menu
   
 

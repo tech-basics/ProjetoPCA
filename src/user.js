@@ -6,3 +6,7 @@ const ImageData = localStorage.getItem("imgR");
     if (ImageData) {
     	document.querySelector("#UserImg").setAttribute("src", ImageData);
     }
+
+    else{
+		document.querySelector("#UserImg").setAttribute("src", "img/placeholder.png");
+	}
