@@ -179,7 +179,7 @@ Um número de ponto flutuante é o que normalmente chamamos de decimal.
 </p>
   <pre>
     <code class="language-rust">
-  let pi = 3.14; //O tipo padrão em russt é f64
+  let pi = 3.14; //O tipo padrão em rust é f64
   let x = 26.4324;
   </code>
 </pre>
@@ -218,8 +218,36 @@ b[2] = 6;
 <p>Nota: Arrays são imutaveis por padrão e mesmo utilizando <span style="color: #47c9af;">[mut]</span> não é possível alterar a quantidade de elementos apenas seus valores.</p>
 
 
+<h2>Tuplas</h2>
 
+<p>São listas com tamanho fixos e elementos com tipos de dados diferentes (ou iguais).</p>
 
+<pre>
+  <code class="language-rust">
+let a = (3, 5.5, true, 'a');
+
+let a: (i32, f64, bool, char) = (3, 5.5, true, 'a');
+  </code>
+</pre>
+
+<p>Nota: As tuplas, assim como os arrays, são imutáveis por padrão e, mesmo utilizando <span style="color: #47c9af;">[mut]</span> não é possível alterar a quantidade de elementos apenas seus valores e estes devem ter o mesmo tipo de dado do valor anterior.</p>
+
+<h2>Str <span style="color: #47c9af;">[String]</span></h2>
+<p>
+Sequência UTF-8 de Unicode sem tamanho definido.
+</p>
+<pre>
+  <code class="language-rust">
+let a = "Olá";
+let mut b: &str = "こんにちは";
+
+println!("{} é o mesmo que {} em japonês.", a, b);
+
+b = "Konnichiwa";
+
+println!("{}", b);
+  </code>
+</pre>
 
   </section>
 
