@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang='pt-br'>
+<head>
+   <meta charset='utf-8'>
+   <link rel="stylesheet" href="stylesCursos.css">
+   <link rel="stylesheet" type="text/css" href="global.css">
+      <link rel="stylesheet" href="user.css">
+   <link rel="stylesheet" type="text/css" href="prism/prism.css" data-noprefix />
+   <title>PCA</title>
+</head>
+<body>
+<!--menu-->
+<div id='menu'>
+<ul>
+   <li><a href='index.html'>Início</a></li>
+   <li class='active'><a href='indexCursos.html'>Cursos</a></li>
+   <li><a href='indexProjetos.html'>Projetos</a></li>
+   <li>
+      <div class="username">
+      <div id="user" class="user"></div> 
+      </div>
+   </li>
+</ul>
+</div>
+</div>
+
+
+<!--Barra lateral-->
+<div class="sidebar">
+  <h1>Rust</h1>
+    <a href='Rust_01.html'>Hello World</a>
+    <a href='Rust_02.html'>Operadores</a>
+    <a href='Rust_03.html'>Variáveis</a>
+    <a href='Rust_04.html'>Estrutura de controle</a>
+    <a href='#'>Funções</a>
+</div>
+
+<!--Guia da página-->
+<div class="setor">
+  <nav>
+      <ul>
+        <li><a href="#sec1" class="tab">Funções</a></li>
+        <li><a href="#secZ" class="tab">Exercícios</a></li>
+      </ul>
+      <div class="barra"></div>
+  </nav>
+</div>
+
+<!--artigo-->
+<main class="main">
+  <section id="sec1" class="sec">
+    <h1><span>Funções</span></h1>
+
+    <p>
+    As variáveis são elementos básicos na programação, definimos uma variável como espaços na memória ao qual somos capazes de armazenar e representar dados.  
+
+    <br>Os dados dentro de uma variável podem ter diferentes tipos. Como números inteiros, textos e valores como verdadeiro e falso. <br><br>
+
+    variáveis podem ser classificadas como globais e locais.<br><br>
+
+    Variáveis globais são aquelas declaradas fora do escopo das funções e podem ser utilizadas por todo o projeto.<br><br> 
+
+    Variáveis locais são aquelas declaradas no início do bloco e seus escopos são restritos aos blocos em que foram declaradas. <br><br>
+
+    como usar variáveis: 
+    </p>
+
+    <pre>
+      <code class="language-rust">
+    fn main() { 
+
+    let x = 45; 
+
+    println!("O valor é {}", x);  
+
+    }    
+      </code>
+    </pre>
+
+    <p>
+    <h2>Nota de Sintaxe:</h2> 
+    <ul>
+      <li>let em rust indica a criação de uma variável.</li>
+      <li>X representa o nome da nossa variável, também chamadas de identificadores.</li>
+      <li>45 é o valor atribuído para a variável x </li>
+    </ul>
+    
+    Como resultado para esse exemplo temos o valor de X exibido no terminal: "O valor é 45"   
+<br>
+    Seguindo com os exemplos, vamos alterar o valor de X  
+
+    </p>
+    <pre>
+      <code class="language-rust">
+    fn main() { 
+
+        let mut x = 45; 
+
+        println!("O valor é {}", x); 
+
+        x = 60; 
+
+        println!("O valor é {}", x); 
+
+    } 
+      </code>
+    </pre>
+    <p>
+    Resultado para o código: <br> O valor é 45 <br> O valor é 60 
+    <br><br>
+    Como podemos observar foi adicionado ao código a <span style="color: #47c9af;">[palavra-chave]</span> ‘mut’. 
+    <br><br>
+    Mut – em rust, indica que a variável é flexível e que pode ter seu valor alterado. 
+<br><br>
+
+    Para a variável x com o valor 60 atribuído, vemos que não foi utilizado o ‘let’, isto ocorre porque a variável já havia sido criada, desta forma não é necessário usar a palavra-chave ‘let’ novamente, apenas o identificador da variável. 
+
+    <br><br>Nota: <span style="color: #47c9af;">[palavra-chave]</span> trata-se de uma palavra ou identificador que tem um significado especial para a linguagem.
+    </p>
+
+  	</section>
+
+
+  <section id="secZ" class="sec">
+    <h1><span>Exercícios </span></h1>
+    <iframe style = "border: transparent;" width="100%" height="800" src="files/Rust/QuizD/indexQuiz.html"></iframe>
+  </section>
+  </main>
+  </div>
+  <script src="prism/prism.js"></script>
+  <script type="text/javascript" src="user.js"></script>
+</body>
+<html>

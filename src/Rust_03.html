@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang='pt-br'>
+<head>
+   <meta charset='utf-8'>
+   <link rel="stylesheet" href="stylesCursos.css">
+   <link rel="stylesheet" type="text/css" href="global.css">
+      <link rel="stylesheet" href="user.css">
+   <link rel="stylesheet" type="text/css" href="prism/prism.css" data-noprefix />
+   <title>PCA</title>
+</head>
+<body>
+<!--menu-->
+<div id='menu'>
+<ul>
+   <li><a href='index.html'>Início</a></li>
+   <li class='active'><a href='indexCursos.html'>Cursos</a></li>
+   <li><a href='indexProjetos.html'>Projetos</a></li>
+   <li>
+      <div class="username">
+      <div id="user" class="user"></div> 
+      </div>
+   </li>
+</ul>
+</div>
+</div>
+
+
+<!--Barra lateral-->
+<div class="sidebar">
+  <h1>Rust</h1>
+    <a href='Rust_01.html'>Hello World</a>
+    <a href='Rust_02.html'>Operadores</a>
+    <a href='#'>Variáveis</a>
+    <a href='Rust_04.html'>Estrutura de controle</a>
+    <a href='Rust_05.html'>Funções</a>
+</div>
+
+<!--Guia da página-->
+<div class="setor">
+  <nav>
+      <ul>
+        <li><a href="#sec1" class="tab">Variáveis</a></li>
+        <li><a href="#sec2" class="tab">Tipos de dados </a></li>
+        <li><a href="#secZ" class="tab">Exercícios</a></li>
+      </ul>
+      <div class="barra"></div>
+  </nav>
+</div>
+
+<!--artigo-->
+<main class="main">
+  <section id="sec1" class="sec">
+    <h1><span>Variáveis</span></h1>
+
+    <p>
+    As variáveis são elementos básicos na programação, definimos uma variável como espaços na memória ao qual somos capazes de armazenar e representar dados.  
+
+    <br>Os dados dentro de uma variável podem ter diferentes tipos. Como números inteiros, textos e valores como verdadeiro e falso. <br><br>
+
+    variáveis podem ser classificadas como globais e locais.<br><br>
+
+    Variáveis globais são aquelas declaradas fora do escopo das funções e podem ser utilizadas por todo o projeto.<br><br> 
+
+    Variáveis locais são aquelas declaradas no início do bloco e seus escopos são restritos aos blocos em que foram declaradas. <br><br>
+
+    como usar variáveis: 
+    </p>
+
+    <pre>
+      <code class="language-rust">
+    fn main() { 
+
+    let x = 45; 
+
+    println!("O valor é {}", x);  
+
+    }    
+      </code>
+    </pre>
+
+    <p>
+    <h2>Nota de Sintaxe:</h2> 
+    <ul>
+      <li>let em rust indica a criação de uma variável.</li>
+      <li>X representa o nome da nossa variável, também chamadas de identificadores.</li>
+      <li>45 é o valor atribuído para a variável x </li>
+    </ul>
+    
+    Como resultado para esse exemplo temos o valor de X exibido no terminal: "O valor é 45"   
+<br>
+    Seguindo com os exemplos, vamos alterar o valor de X  
+
+    </p>
+    <pre>
+      <code class="language-rust">
+    fn main() { 
+
+        let mut x = 45; 
+
+        println!("O valor é {}", x); 
+
+        x = 60; 
+
+        println!("O valor é {}", x); 
+
+    } 
+      </code>
+    </pre>
+    <p>
+    Resultado para o código: <br> O valor é 45 <br> O valor é 60 
+    <br><br>
+    Como podemos observar foi adicionado ao código a <span style="color: #47c9af;">[palavra-chave]</span> ‘mut’. 
+    <br><br>
+    Mut – em rust, indica que a variável é flexível e que pode ter seu valor alterado. 
+<br><br>
+
+    Para a variável x com o valor 60 atribuído, vemos que não foi utilizado o ‘let’, isto ocorre porque a variável já havia sido criada, desta forma não é necessário usar a palavra-chave ‘let’ novamente, apenas o identificador da variável. 
+
+    <br><br>Nota: <span style="color: #47c9af;">[palavra-chave]</span> trata-se de uma palavra ou identificador que tem um significado especial para a linguagem.
+    </p>
+
+  	</section>
+
+    <section id="sec2" class="sec">
+      <h1><span>Tipos de dados </span></h1>
+
+      <h2> Bool - boleano:</h2>
+
+      <p>É uma variável binária, contendo dois valores possíveis: <span style="color: #47c9af;">[True]</span> ou <span style="color: #47c9af;">[False]</span>  </p>
+
+    <pre>
+      <code class="language-rust">
+    let t = true; 
+    let f = false;     
+      </code>
+    </pre>
+      
+      <h2>Char</h2>
+
+      <p>É um caractere de 4 bytes. </p>
+
+    <pre>
+      <code class="language-rust">
+    let a = 'a';  
+    let b = 'b'; 
+    let smile: char = '😎';
+      </code>
+    </pre>
+
+    <h2> Tipos inteiros</h2>
+
+    <p>
+    Os tipos inteiros incluem <span style="color: #47c9af;">[i8, i16, i32, i64, isize, u8, u16, u32, u64, usize]</span>. <br><br>
+
+    A letra <span style="color: #47c9af;">[i]</span> e <span style="color: #47c9af;">[u]</span> definem se o valor é ou não assinado, valores assinados <span style="color: #47c9af;">[signed]</span> possuem valores positivos e negativos [-/+], para valores não assinados <span style="color: #47c9af;">[unsigned]</span> não é permitido valores negativos [0/+].<br>  
+
+    Um i8 por exemplo possuem valor mínimo de -128 e máximo de 127. enquanto o u8 possui valor mínimo de 0 e máximo de 255. <br><br>
+
+    O número que aparece após as letras define o tamanho do inteiro. <br>
+
+    i8 é um tipo inteiro de 8 bits e u64 é um inteiro não assinado de 64 bits. 
+
+    <br><br>  
+
+    isize e usize dependem da arquitetura do computador, por padrão eles serão 32 bits para plataformas de 32-bit e 64 bits para plataformas 64-bit. 
+    <br><br>Nota: o valor padrão para o tipo inteiro em rust é i32, você pode alterar seu tipo padrão designando um novo tipo para uma variável. </p>
+      
+  <pre>
+    <code class="language-rust">
+  let x = 5; // tipo i32 
+  let y: i8 = -100;  // i8
+  let z: u64 = 18446744551615; // i64
+  let y: i16 = 32767; 
+  let z: u16 = 65535; 
+    </code>
+  </pre>
+
+<h2>Pontos flutuantes <span style="color: #47c9af;">[Float]</span></h2>
+<p>
+Esses tipos incluem <span style="color: #47c9af;">[f32, f64]</span>. <br>
+Um número de ponto flutuante é o que normalmente chamamos de decimal.
+</p>
+  <pre>
+    <code class="language-rust">
+  let pi = 3.14; //O tipo padrão em rust é f64
+  let x = 26.4324;
+  </code>
+</pre>
+
+<h2>Vetor <span style="color: #47c9af;">[Array]</span></h2>
+<p>
+Um vetor é uma lista de tamanho fixo e todos os elementos que possui compartilham o mesmo tipo.
+<br><br>
+É declarada na função como:
+</p>
+<pre>
+  <code class="language-rust">
+let name: [type; size] = [elem1, elem2, elem3, elem4];
+  </code>
+</pre>
+<pre>
+  <code class="language-rust">
+let a = [1, 2, 3]; 
+let b: [i32; 5] = [0, 1, 2, 4, 7]; 
+
+println!("O quarto elemento de B é: {}", c[3]); // 4
+  </code>
+</pre>
+
+
+<pre>
+  <code class="language-rust">
+let a: [i32; 0] = []; //lista vazia
+let mut b: [i32; 3] = [1, 2, 3];
+b[0] = 2;
+b[1] = 4;
+b[2] = 6;
+  </code>
+</pre>
+
+<p>Nota: Arrays são imutaveis por padrão e mesmo utilizando <span style="color: #47c9af;">[mut]</span> não é possível alterar a quantidade de elementos apenas seus valores.</p>
+
+
+<h2>Tuplas</h2>
+
+<p>São listas com tamanho fixos e elementos com tipos de dados diferentes (ou iguais).</p>
+
+<pre>
+  <code class="language-rust">
+let a = (3, 5.5, true, 'a');
+
+let a: (i32, f64, bool, char) = (3, 5.5, true, 'a');
+  </code>
+</pre>
+
+<p>Nota: As tuplas, assim como os arrays, são imutáveis por padrão e, mesmo utilizando <span style="color: #47c9af;">[mut]</span> não é possível alterar a quantidade de elementos apenas seus valores e estes devem ter o mesmo tipo de dado do valor anterior.</p>
+
+<h2>Str <span style="color: #47c9af;">[String]</span></h2>
+<p>
+Sequência UTF-8 de Unicode sem tamanho definido.
+</p>
+<pre>
+  <code class="language-rust">
+let a = "Olá";
+let mut b: &str = "こんにちは";
+
+println!("{} é o mesmo que {} em japonês.", a, b);
+
+b = "Konnichiwa";
+
+println!("{}", b);
+  </code>
+</pre>
+
+  </section>
+
+  <section id="secZ" class="sec">
+    <h1><span>Exercícios </span></h1>
+    <iframe style = "border: transparent;" width="100%" height="800" src="files/Rust/QuizB/indexQuiz.html"></iframe>
+  </section>
+  </main>
+  </div>
+  <script src="prism/prism.js"></script>
+  <script type="text/javascript" src="user.js"></script>
+</body>
+<html>
