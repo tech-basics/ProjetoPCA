@@ -3,6 +3,7 @@
 <head>
    <meta charset='utf-8'>
    <link rel="stylesheet" href="stylesCursos.css">
+   <link rel="stylesheet" href="styles.css">
    <link rel="stylesheet" type="text/css" href="global.css">
       <link rel="stylesheet" href="user.css">
    <link rel="stylesheet" type="text/css" href="prism/prism.css" data-noprefix />
@@ -13,8 +14,8 @@
 <div id='menu'>
 <ul>
    <li><a href='index.html'>Início</a></li>
-   <li class='active'><a href='indexCursos.html'>Cursos</a></li>
-   <li><a href='indexProjetos.html'>Projetos</a></li>
+   <li><a href='indexCursos.html'>Cursos</a></li>
+   <li class='active'><a href='indexProjetos.html'>Projetos</a></li>
    <li>
       <div class="username">
       <div id="user" class="user"></div> 
@@ -28,8 +29,10 @@
 <div class="setor">
   <nav>
       <ul>
-        <li><a href="#sec1" class="tab"></a></li>
-        <li><a href="#secZ" class="tab"></a></li>
+        <li><a href="#sec1" class="tab">Começando o projeto</a></li>
+        <li><a href="#sec2" class="tab">Criando funções</a></li>
+        <li><a href="#sec3" class="tab">Menu de opções</a></li>
+        <li><a href="#sec4" class="tab">Download</a></li>
       </ul>
       <div class="barra"></div>
   </nav>
@@ -37,17 +40,160 @@
 
 <!--artigo-->
 <main class="main">
+	<h1><span>Cadastro de Produtos</span></h1>
+	<p>Nesse projeto vamos abordar o uso de funções, dicionários e estrutura de controle que foram aprendidos no módulo de python. <br>
+
+O objetivo final para esse projeto trata-se de um programa que nos permita criar uma lista de produtos com seus preços, salvar essa lista e carregar e visualizar uma lista já salva.<br> Nessa instrução específica iremos abordar apenas os básicos e apresentar todo o conteúdo voltado para o terminal. Uma próxima etapa possível para esse projeto trata-se de adaptar o código para utilizar o sistema com interface. utilizando o Tkinter ou alguma outra ferramenta para desenvolvimento de interfaces com python</p>
+
+
+
+
   <section id="sec1" class="sec">
-    <h1><span>Projeto</span></h1>
+    <h1><span>Começando o projeto</span></h1>
+    <p>
+Para começar, iremos criar uma pasta chamada <span style="color: #47c9af;">[CadastroProdutos]</span> e dentro dela o arquivo <span style="color: #47c9af;">[main.py]</span>, dentro do arquivo .py que criamos vamos importar o módulo <span style="color: #47c9af;">[ast — Árvores de Sintaxe Abstrata]</span>. Esse módulo ajuda os programas em python a processar dados. iremos utilizar ela mais tarde para transformar strings em objetos em python com o comando <span style="color: #47c9af;">[literal_eval]</span>. <br> Além da importação do módulo vamos dar início ao código com a criação dos dicionários e criando a váriaveis para buscar valores desse dicionário.
+</p>
+<pre>
+  <code class="language-python">
+import ast
 
-    
+produtos = {} #Cria o dicionário de produtos
+produtoKey = produtos.keys() #Verifica o nome dos produtos
+produtoVal = produtos.values() #Verifica o preço dos produtos
+</code>
+</pre>
   	</section>
+  	<section id="sec2" class="sec">
+    <h1><span>Criando funções</span></h1>
+    <p>Antes de seguir vamos nos situar no projeto e entender as funções necessárias para o programa: </p>
+<ul>
+    <li>função para adicionar produtos </li>
+	<li>função para remover produtos</li>
+	<li>função para salvar um dicionário</li>
+	<li>função para carregar um dicionário salvo</li>
+	<li>função para exibir na tela os dados da lista</li>
+</ul>
+<p>Essas serão as funções que serão trabalhadas.<br>
+Para a primeira função é preciso pegar 2 inputs do usuário e adicionar ao dicionário os valores.<br>Por questão de agilidade também será perguntado ao usuário se irá ser adicionado mais um produto após a operação e por comodidade informar o usuário o produto colocado e o valor do mesmo.
+</p>
+<pre>
+  <code class="language-python">
+def addProd():    #função para adicionar produtos
+    key = input('Insira o produto: ') 
+    val = float(input('Insira o valor do produto: '))
+    produtos.update({key:val}) # adiciona os dados no dicionário
+    print(f'foi adicionado a lista o produto {key} custando: R$ {val}') #informa o usuário os dados inseridos
+    ct = input('deseja adicionar outro produto? [s/n] ')
+    if ct == 's':
+        addProd()
+</code>
+</pre>
+<p>Para a segunda função vamos utilizar um dos comandos criados no começo do programa. <span style="color: #47c9af;">[produtoKey]</span> com eles vamos pegar as chaves dos dicionários que correspondem aos produtos informados e mostrar na tela. em seguida o usuário já sabendo as opções deverá informar qual deseja remover.</p>
 
-<!--
-  <section id="secZ" class="sec">
-    <h1><span> </span></h1>
-    <iframe style = "border: transparent;" width="100%" height="800" src="files/"></iframe>
-  </section>-->
+<pre>
+  <code class="language-python">
+def remProd():
+     print("lista de produtos:")
+     for x in produtoKey: # Mostra na tela cada um dos produtos no dicionário
+          print(x)
+     rem = input('informe o produto que deseja remover: ')
+     produtos.pop(rem) #remove do dicionário o valor.
+</code>
+</pre>
+
+
+<p>Para a terceira função o programa irá gerar um arquivo de texto chamado <span style="color: #47c9af;">[produtos.txt]</span> se já não houver um e em seguida irá apagar todo o texto salvo anteriormente e sobreescrever com os novos dados do dicionário.</p>
+<pre>
+  <code class="language-python">
+def save(): #apaga o texto anterior e salva o novo dicionário de produtos no arquivo de texto
+     f = open("produtos.txt", "r+")
+     f.truncate(0) #Apaga os dados anteriores
+     f.close
+     f = open("produtos.txt","a")
+     f.write(str(produtos)) #Transcreve os novos dados 
+     f.close()
+</code>
+</pre>
+<p>
+Para a quarta função o programa precisará abrir o arquivo de texto criado anterior mente e carregar os dados dele de volta para o código. agora o módulo ast entra em ação ajudando o programa a reconhecer o tipo de dado contido no arquivo de texto.</p>
+<pre>
+  <code class="language-python">
+def load(): # carrega os produtos
+     f=open("produtos.txt", "r")
+     ct = f.read()
+     lts = ast.literal_eval(ct) #carrega os dados como um tipo
+     f.close()
+     produtos.update(lts) #adiciona os valores ao dicionário
+</code>
+</pre>
+<p>
+A quinta função será responsável por apresentar os valores na tela, quando utilizamos apenas o <span style="color: #47c9af;">[produtoKey]</span> o programa extende o código com informações que o usuário não precisa, como caracteres especiais e informando que trata-se de uma lista de chaves do dicionário, então com essa função estamos separando a informação necessária e disponibilizando ao usuário a informação clara</p>
+<pre>
+  <code class="language-python">
+def prodList():
+     listKey = [] #lista de produtos
+     listVal = [] # lista de valores
+     for x in produtoKey:
+          listKey.append(x)
+     for y in produtoVal:
+          listVal.append(y)
+     qtd = len(listKey)#verifica a quantidade de elementos da lista
+     print("--------------------Lista de produtos--------------------")
+     for x in range(qtd):
+          print(str(listKey[x]) + " R$ " + str(listVal[x])) #printa os valores e os nomes dos produtos em sequência
+</code>
+</pre>
+
+</section>
+  	<section id="sec3" class="sec">
+    <h1><span>Menu de opções</span></h1>
+    <p>Agora que temos todas as funções vamos criar um menu que ficará em loop durante a execução do programa e designar cada função para uma opção, dessa forma será possível escolher oq o programa fará a seguir.</p>
+
+<pre>
+  <code class="language-python">
+def menu():
+     print('''
+
+[1] - Adicionar produtos
+[2] - Remover produtos
+[3] - Salvar lista
+[4] - Carregar lista
+[5] - Mostrar lista
+[6] - Sair do programa
+
+''')
+     resp = input("Escolha uma Opção: ")
+     if resp == "1":
+          addProd()
+          menu()
+     elif resp == "2":
+          remProd()
+          menu()
+     elif resp == "3":
+          save()
+          menu()
+     elif resp == "4":
+          load()
+          menu()
+     elif resp == "5":
+          prodList()
+          menu()
+     elif resp == "6":
+          exit()
+     else:
+          print("Alternativa inválida. Tente novamente")
+          menu()
+
+menu()
+</code>
+</pre>
+
+</section>
+<section id="sec4" class="sec">
+	<br><br>
+  		<a class="botao" href="files/Python/CadastroProdutos.rar" download style="display: block; text-align: center;">Download</a><br><br>
+</section>		
+
   </main>
   </div>
   <script src="prism/prism.js"></script>

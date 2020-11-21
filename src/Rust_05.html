@@ -51,72 +51,62 @@
   <section id="sec1" class="sec">
     <h1><span>Funções</span></h1>
 
-    <p>
-    As variáveis são elementos básicos na programação, definimos uma variável como espaços na memória ao qual somos capazes de armazenar e representar dados.  
+    <p>Uma função é um pedaço de código que executa tarefas específicas epode ser chamado a qualquer momento e quantas vezes forem necessárias no código.</p>
+<ul>
+<li>Códigos são declarados com a palavra-chave <span style="color: #47c9af;">[fn]</span></li>
 
-    <br>Os dados dentro de uma variável podem ter diferentes tipos. Como números inteiros, textos e valores como verdadeiro e falso. <br><br>
+<li>Em rust quando for passar argumentos em uma função é necessário declarar os tipos de dados</li>
 
-    variáveis podem ser classificadas como globais e locais.<br><br>
+<li>Por padrão, funções retornam uma tupla vazia. Se você desejar que retorne um valor o tipo do valor deve ser específicado após <span style="color: #47c9af;">[->]</span></li>
+</ul>
 
-    Variáveis globais são aquelas declaradas fora do escopo das funções e podem ser utilizadas por todo o projeto.<br><br> 
 
-    Variáveis locais são aquelas declaradas no início do bloco e seus escopos são restritos aos blocos em que foram declaradas. <br><br>
+<h2><span style="color: #47c9af;">Olá mundo</span></h2>
 
-    como usar variáveis: 
-    </p>
+<pre>
+  <code class="language-rust">
+fn main() {
+    println!("Olá mundo!");
+}
+  </code>
+</pre>
 
-    <pre>
-      <code class="language-rust">
-    fn main() { 
+<h2><span style="color: #47c9af;">Passando argumentos</span></h2>
 
-    let x = 45; 
 
-    println!("O valor é {}", x);  
+<pre>
+  <code class="language-rust">
+fn print_soma(a: i8, b: i8) {
+    println!("soma é: {}", a + b);
+}
+  </code>
+</pre>
 
-    }    
-      </code>
-    </pre>
+<h2><span style="color: #47c9af;">Retornando valores</span></h2>
 
-    <p>
-    <h2>Nota de Sintaxe:</h2> 
-    <ul>
-      <li>let em rust indica a criação de uma variável.</li>
-      <li>X representa o nome da nossa variável, também chamadas de identificadores.</li>
-      <li>45 é o valor atribuído para a variável x </li>
-    </ul>
+<pre>
+  <code class="language-rust">
+fn plus_two(a: i32) -> i32 {
+    return a + 2;
+}
+  </code>
+</pre>
+
+<h2><span style="color: #47c9af;">Funções Lambda</span></h2>
+<pre>
+  <code class="language-rust">
+fn main() {
+  let x = 2;
+  println!("{}", valor_quadrado(x));
+}
+
+fn valor_quadrado(i: i32) -> i32 {
+    i * i
+}
+  </code>
+</pre>
+
     
-    Como resultado para esse exemplo temos o valor de X exibido no terminal: "O valor é 45"   
-<br>
-    Seguindo com os exemplos, vamos alterar o valor de X  
-
-    </p>
-    <pre>
-      <code class="language-rust">
-    fn main() { 
-
-        let mut x = 45; 
-
-        println!("O valor é {}", x); 
-
-        x = 60; 
-
-        println!("O valor é {}", x); 
-
-    } 
-      </code>
-    </pre>
-    <p>
-    Resultado para o código: <br> O valor é 45 <br> O valor é 60 
-    <br><br>
-    Como podemos observar foi adicionado ao código a <span style="color: #47c9af;">[palavra-chave]</span> ‘mut’. 
-    <br><br>
-    Mut – em rust, indica que a variável é flexível e que pode ter seu valor alterado. 
-<br><br>
-
-    Para a variável x com o valor 60 atribuído, vemos que não foi utilizado o ‘let’, isto ocorre porque a variável já havia sido criada, desta forma não é necessário usar a palavra-chave ‘let’ novamente, apenas o identificador da variável. 
-
-    <br><br>Nota: <span style="color: #47c9af;">[palavra-chave]</span> trata-se de uma palavra ou identificador que tem um significado especial para a linguagem.
-    </p>
 
   	</section>
 

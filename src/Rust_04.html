@@ -39,7 +39,10 @@
 <div class="setor">
   <nav>
       <ul>
-        <li><a href="#sec1" class="tab">Estrutura de controle</a></li>
+        <li><a href="#sec1" class="tab">If ✧ Else If ✧ Else</a></li>
+        <li><a href="#sec2" class="tab">While</a></li>
+        <li><a href="#sec2" class="tab">For</a></li>
+        <li><a href="#sec2" class="tab">Match</a></li>
         <li><a href="#secZ" class="tab">Exercícios</a></li>
       </ul>
       <div class="barra"></div>
@@ -48,77 +51,134 @@
 
 <!--artigo-->
 <main class="main">
-  <section id="sec1" class="sec">
+  <section class="sec">
     <h1><span>Estrutura de controle</span></h1>
 
     <p>
-    As variáveis são elementos básicos na programação, definimos uma variável como espaços na memória ao qual somos capazes de armazenar e representar dados.  
-
-    <br>Os dados dentro de uma variável podem ter diferentes tipos. Como números inteiros, textos e valores como verdadeiro e falso. <br><br>
-
-    variáveis podem ser classificadas como globais e locais.<br><br>
-
-    Variáveis globais são aquelas declaradas fora do escopo das funções e podem ser utilizadas por todo o projeto.<br><br> 
-
-    Variáveis locais são aquelas declaradas no início do bloco e seus escopos são restritos aos blocos em que foram declaradas. <br><br>
-
-    como usar variáveis: 
+    Na area de computação, estruturas de controle referem-se a ordem em que instruções e funções são executadas ao verificar se alguma condição é verdadeira ou falsa. <br>Por meio dessa verificação de verdadeiro ou falso as estruturas de controle possibilitam ao programa tomar decisões e alterar o seu fluxo de execução.
     </p>
+  </section>
+  <section id="sec1" class="sec">
+    <h1><span>If ✧ Else If ✧ Else</span></h1>    
+<p>O comando <span style="color: #47c9af;">[if]</span> é comum em muitas linguagens de programação, sua função é verificar se uma condição é verdade ou falsa. <br>
+Assim como demostrado no exemplo a seguir:</p>
+
 
     <pre>
       <code class="language-rust">
-    fn main() { 
+let age = 13;
 
-    let x = 45; 
-
-    println!("O valor é {}", x);  
-
-    }    
+if age < 18 {
+    println!("Olá, criança"); // O código mostra na tela
+}   
       </code>
     </pre>
 
     <p>
-    <h2>Nota de Sintaxe:</h2> 
-    <ul>
-      <li>let em rust indica a criação de uma variável.</li>
-      <li>X representa o nome da nossa variável, também chamadas de identificadores.</li>
-      <li>45 é o valor atribuído para a variável x </li>
-    </ul>
-    
-    Como resultado para esse exemplo temos o valor de X exibido no terminal: "O valor é 45"   
-<br>
-    Seguindo com os exemplos, vamos alterar o valor de X  
-
+    Complementar ao <span style="color: #47c9af;">[if]</span> ainda temos os operadores <span style="color: #47c9af;">[else if]</span> e <span style="color: #47c9af;">[else]</span>. Essa função possibilita adicionar uma nova condição à estrutura de controle para atender a lógica implementada.
     </p>
     <pre>
       <code class="language-rust">
-    fn main() { 
+let i = 7;
 
-        let mut x = 45; 
-
-        println!("O valor é {}", x); 
-
-        x = 60; 
-
-        println!("O valor é {}", x); 
-
-    } 
+if i % 2 == 0 {
+    println!("par");
+} else {
+    println!("ímpar"); // O código mostra na tela
+}
       </code>
     </pre>
     <p>
-    Resultado para o código: <br> O valor é 45 <br> O valor é 60 
-    <br><br>
-    Como podemos observar foi adicionado ao código a <span style="color: #47c9af;">[palavra-chave]</span> ‘mut’. 
-    <br><br>
-    Mut – em rust, indica que a variável é flexível e que pode ter seu valor alterado. 
-<br><br>
+    Para o <span style="color: #47c9af;">[else if]</span> utilizaremos para operações maiores, com mais caminhos para o código.<br>
+Outro exemplo:</p>
+    <pre>
+      <code class="language-rust">
+let tam_equipe = 7;
 
-    Para a variável x com o valor 60 atribuído, vemos que não foi utilizado o ‘let’, isto ocorre porque a variável já havia sido criada, desta forma não é necessário usar a palavra-chave ‘let’ novamente, apenas o identificador da variável. 
+if tam_equipe < 5 {
+    println!("equipe pequena");
+} else if tam_equipe < 10 {
+    println!("equipe média"); 
+} else if tam_equipe == 2 {
+    println!("dupla");
+} else {
+    println!("equipe grande");
+}
+      </code>
+    </pre>
+    <p>
+    Também é possível definir uma váriavel utilizando let e dentro dela estabelecer uma função de verificação.<br>
+    Como mostrado no exemplo a seguir:</p>
 
-    <br><br>Nota: <span style="color: #47c9af;">[palavra-chave]</span> trata-se de uma palavra ou identificador que tem um significado especial para a linguagem.
-    </p>
-
+    <pre>
+      <code class="language-rust">
+let idade: u8 = 13;
+let menor_idade = if idade < 18 { true } else { false };
+</code>
+</pre>
   	</section>
+  <section id="sec2" class="sec">
+    <h1><span>While</span></h1>   
+    <p>Assim como a função anterior <span style="color: #47c9af;">[while]</span> ou "Enquanto"  só será possível quando for atendido uma condição. <br>Para ele "enquanto" uma condição for verdadeira, o código será executado, e enquanto essa condição permanecer verdadeira, o código continua sendo executado repetidamente.</p>
+<pre>
+  <code class="language-rust">
+let mut a = 1;
+
+while a <= 10 {
+    println!("Valor de A: {}", a);
+    a += 1; //
+}
+</code>
+</pre>
+
+<p>
+O comando <span style="color: #47c9af;">[break]</span> é utilizado em laços de repetição e causa a interrupção imediata do mesmo, continuando o programa na próxima linha após o ciclo de repetição.<br>
+O comando <span style="color: #47c9af;">[continue]</span> é usado somente em laços de repetição e quando executado o laço volta imediatamente para o teste de condição do laço de repetição.  
+</p>
+
+<img class="imgCursos" src="files/Rust/breakContinue.png">
+  </section>
+  <section id="sec3" class="sec">
+    <h1><span>For</span></h1>  
+    <p>Usamos o comando <span style="color: #47c9af;">[for]</span> quando sabemos exatamente quantas vezes iremos repetir um bloco de instruções.</p>
+<pre>
+  <code class="language-rust">
+// 0 para 10 (excluindo o 10)
+for i in 0..10{
+  println!("Valor atual: {}", i);
+}
+
+// 0 para 10 (incluindo o 10)
+for i in 0..=10{
+  println!("Valor atual: {}", i);
+}
+
+//Utilizando arrays
+
+let grupo : [&str; 5] = ["Juliana", "Anderson", "Christian", "Chrystian", "Thales"]
+
+
+fon n in 0..grupo.len(){
+  println!("Pessoa: {}", grupo[n]);
+}
+</code></pre>
+  <section id="sec4" class="sec">
+    <h1><span>Match</span></h1>  
+    <p>O comando <span style="color: #47c9af;">[match]</span> nos permite comparar valores com uma série de padrões e serve para rodar frações de código condicionalmente. </p>
+
+<pre>
+  <code class="language-rust">
+let tshirt_width = 20;
+let tshirt_size = match tshirt_width {
+    16 => "S", // checa se o tamanho é 16
+    17 | 18 => "M", // checa se o tamanho é 17 ou 18
+    19 ..= 21 => "L", // checa se o tamanho varia de 19 até 21 (19,20,21)
+    22 => "XL",
+    _ => "Indisponível",
+};
+
+println!("{}", tshirt_size); // L
+</code></pre>
 
 
   <section id="secZ" class="sec">
